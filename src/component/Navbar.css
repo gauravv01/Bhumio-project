@@ -1,0 +1,10 @@
+ul{
+    position: fixed;
+    top: 25vh;
+    left: 3vw;
+}
+
+
+li{
+    list-style: none;
+}

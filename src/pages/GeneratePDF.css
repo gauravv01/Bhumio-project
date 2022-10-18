@@ -1,0 +1,14 @@
+.button1{
+    position: fixed;
+    z-index: 1;
+    margin-top: 1rem;
+    top: 10vh;
+    left: 80vw;
+}
+
+    .margin{
+        position: fixed;
+        top: 15vh;
+        left: 20vw;
+        width: 50vw;
+    }

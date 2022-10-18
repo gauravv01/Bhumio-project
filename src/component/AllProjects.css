@@ -1,0 +1,18 @@
+.main{
+    position: relative;
+    top: 22vh;
+    left: 12vw;
+    display: grid;
+    grid-template-columns: repeat(3,20vh);
+   
+  
+
+}
+
+.head{
+    margin: 2vh;
+    width: 15vw;
+    border: 2px solid blue;
+    border-radius: 2.5vh;
+    height: 25vh;
+  }

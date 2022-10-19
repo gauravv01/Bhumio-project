@@ -2,6 +2,7 @@ import React from "react";
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import { useSelector } from "react-redux";
+import './Statistics.css';
 
 
 
@@ -37,7 +38,7 @@ const LineChart = () => {
     }
 }
   return (
-    <div >
+    <div className="Chart"  >
       <Line data={data}  options={options} />
     </div>
   );

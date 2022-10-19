@@ -1,20 +1,24 @@
+.position{
+    position: relative;
+    top: 22vh;
+    left: 12vw;
+    display: grid;
+    grid-template-columns: 20vh,20vh;
+}
 .head1{
-    width: 22vw;
-    border: 2px solid blue;
+    margin: 2vh;
+    width: 20vw;
+    border: 1px solid black;
     border-radius: 2.5vh;
-    height: 22vh;
+    height: 25vh;
   }
 
   .button2{
     position: fixed;
-    top: 10vh;
-    right: 5vw;
+    top: 0;
+    right: 0;
   }
-  .position{
-    position: fixed;
-    top: 15vh;
-    left: 15vw;
-  }
+ 
 
   .details{
     position: fixed;

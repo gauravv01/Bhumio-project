@@ -7,7 +7,7 @@ import './Statistics.css'
 
 
 const LineChart = () => {
-  const IncomingData= useSelector(state=>state.dataFetchSlice.dataArray);
+  const IncomingData =useSelector(state=>state.dataFetchSlice.dataArray);
   let labels = [];
   let Budgetdata=[];
   IncomingData.forEach(element => {labels.push(element.id) ;
@@ -25,9 +25,21 @@ const LineChart = () => {
       },
     ],
   };
+  const options= {
+    plugins: { title: {
+      display: true,
+      text: 'Budget (in Cr.)',position:'left'
+  },
+        subtitle: {
+            display: true,
+            text: 'Project-ID', position:'bottom',padding:{bottom:10},font:{weight: 'bold'}
+        }
+        
+    }
+}
   return (
     <div className="Chart">
-      <Line data={data}  datasetIdKey='Budget' />
+      <Line data={data}  options={options} />
     </div>
   );
 };

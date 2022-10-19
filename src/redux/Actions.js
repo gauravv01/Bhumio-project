@@ -1,5 +1,6 @@
 import axios from "../axios";
 import { dataActions } from "./datafetchSlice";
+import { NotificationActions } from "./notificationSlice";
 
 export const getdata=()=>{
     return async(dispatch)=>{
@@ -13,10 +14,10 @@ export const getdata=()=>{
     dispatch(dataActions.ReplaceItems(data));
     }
     else{
-        dispatch(dataActions.handleNotification({message:'No Requests Found!',status:'error'}))
+        dispatch(NotificationActions.handleNotification({message:'No Requests Found!',status:'error'}))
     }
 }catch(err){
-    dispatch(dataActions.handleNotification({message:'There is Error while loading!',status:'error'}))
+    dispatch(NotificationActions.handleNotification({message:'There is Error while loading!',status:'error'}))
 }
     }
 };
@@ -24,28 +25,28 @@ export const getdata=()=>{
 export const Postdata=(item)=>{
     return async (dispatch)=>{
         dispatch(
-            dataActions.handleNotification({
+            NotificationActions.handleNotification({
               status: 'pending',
               message: 'Sending data!',
             })
           );
 const sendRequest = async () => {
     const response = await axios.put(
-      '/Formdata.json',JSON.stringify(item)
+      '/Formdata.json',JSON.stringify(item.dataArray)
     );
     return response;
   } 
   try {
     await sendRequest();
     dispatch(
-        dataActions.handleNotification({
+        NotificationActions.handleNotification({
         status: 'success',
         message: 'Sent data successfully!',
       })
     );
   } catch (error) {
     dispatch(
-        dataActions.handleNotification({
+        NotificationActions.handleNotification({
         status: 'error',
         message: 'Sending data failed!',
       })

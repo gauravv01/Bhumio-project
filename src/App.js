@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react';
-import { Routes,Route } from 'react-router-dom';
+import { Routes,Route} from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import Navbar from './component/Navbar';
 import Home from './pages/Home';
@@ -15,35 +15,34 @@ function App() {
   const dispatch=useDispatch();
   const [showNotification,setshowNotification]= useState(false);
     const Request=useSelector(state=>state.dataFetchSlice);
-  const notification=useSelector(state=>state.dataFetchSlice.Notification);
-  const {changed}=Request;
-  const {dataArray}=Request;
-  
+  const notification=useSelector(state=>state.notificationSlice.Notification);
+ 
+  console.log('AppJS loaded');
+  console.log(Request)
   
     useEffect(()=>{
+      console.log('useEffec1')
       setshowNotification(true)
       dispatch(getdata())
-       setTimeout(() => {
-         console.log('Fetched!')
-         setshowNotification(false)
-      }, 1500);
          },[dispatch])
   
       useEffect(()=>{
+        console.log('useEffect2',isInitial)
           if(isInitial){
               isInitial=false;
               return
           }
-          else if(changed){
+          else if(Request.changed){
           setshowNotification(true)
-          dispatch(Postdata(dataArray))
-       setTimeout(() => {
-         console.log('Posted')
-         setshowNotification(false)
-      }, 1500);
+          dispatch(Postdata(Request))
           }
-        },[changed,dispatch]);
+        },[Request,dispatch]);
 
+if(showNotification){
+  console.log('settimout running')
+        setTimeout(() => {
+          setshowNotification(false)
+       }, 1500);}
 
   return (
     <Fragment>

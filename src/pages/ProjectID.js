@@ -4,19 +4,20 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
 import {useParams} from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { Button } from '@mui/material';
+import { useSelector } from 'react-redux';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import './ProjectID.css';
 
 const Reg=()=>{
+  const items =useSelector(state=>state.dataFetchSlice.dataArray);
 	const {id}=useParams();
- const data=useSelector(state=>state.dataFetchSlice.dataArray.find(item=>item.id===+id));
+ const data=items.find(item=>item.id===+id);
       
 	return(
-		<div className='position'>
-		<Grid container spacing={3} >
- <Grid container item spacing={3}>
+		 <div className='position'>
+		{data && <Grid container spacing={3} >
+ <Grid container item spacing={2}>
 			<Card  className="head1">
                <CardContent>
              <Typography color="textSecondary" gutterBottom >
@@ -86,7 +87,7 @@ const Reg=()=>{
      </CardContent>
       </Card>
       </Grid> 
-</Grid>
+</Grid>}
 <Link to='/'><Button variant='contained' className='button2' ><ArrowLeftIcon/> Back</Button></Link>
 <h2 className='details'>Project Details</h2>
 	</div>

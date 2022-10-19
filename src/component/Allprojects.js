@@ -2,17 +2,17 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Fragment} from 'react';
+import { useSelector } from 'react-redux';
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
 import './AllProjects.css';
 
 const Allprojects=()=>{
-const data=useSelector(state=>state.dataFetchSlice.dataArray);
+   const data=useSelector(state=>state.dataFetchSlice.dataArray);
 
    return(
 	<Fragment >
 	   {
-      data && data.map((item,i)=>{
+      data.map((item,i)=>{
          return(
             <div key={item.id} className='main' > 
        <Link to={`/project/${item.id}`}  className="Link" >   

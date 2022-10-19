@@ -1,5 +1,6 @@
 import { Fragment,useRef } from 'react';
 import { useReactToPrint } from 'react-to-print';
+import { useSelector } from 'react-redux';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -8,7 +9,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 import './GeneratePDF.css';
 
@@ -34,7 +34,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 export default function CustomizedTables() {
- const data= useSelector(state=>state.dataFetchSlice.dataArray);
+  const data=useSelector(state=>state.dataFetchSlice.dataArray);
  const componentRef = useRef();
  const handlePrint = useReactToPrint({
    content: () => componentRef.current,

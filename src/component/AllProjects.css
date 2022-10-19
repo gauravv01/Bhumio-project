@@ -11,8 +11,8 @@
 
 .head{
     margin: 2vh;
-    width: 15vw;
-    border: 2px solid blue;
+    width: 20vw;
+    border: 1px solid black;
     border-radius: 2.5vh;
     height: 25vh;
   }

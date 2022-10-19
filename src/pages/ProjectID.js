@@ -15,82 +15,126 @@ const Reg=()=>{
  const data=items.find(item=>item.id===+id);
       
 	return(
-		 <div className='position'>
+		 <>
 		{data && <Grid container spacing={3} >
  <Grid container item spacing={2}>
 			<Card  className="head1">
-               <CardContent>
+               <CardContent className='Card1'>
+                <div>
              <Typography color="textSecondary" gutterBottom >
 
-      Project-Id:{data.id}
+      Project-Id:
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-     Project-Name :{data.ProjectName}
+     Project-Name :
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-      Project-Manager:{data.ProjectManager}
+      Project-Manager:
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-       Start-Date:{data.StartDate}
+       Start-Date:
     </Typography>
+    </div>
+    <div>
+             <Typography color="textSecondary" gutterBottom >
+
+      {data.id}
+    </Typography>
+    <Typography color="textSecondary" sx={{ fontWeight: 'bold' }} gutterBottom>
+     {data.ProjectName}
+    </Typography>
+    <Typography color="textSecondary" sx={{ fontWeight: 'bold' }} gutterBottom>
+     {data.ProjectManager}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+     {data.StartDate}
+    </Typography>
+    </div>
      </CardContent>
       </Card>
       <Card  className="head1">
-               <CardContent>
+               <CardContent className='Card1'>
+                <div>
              <Typography color="textSecondary" gutterBottom >
-
-      Site-Address:{data.SiteAddress}
+      Site-Address:
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-    Railway-juction :{data.Railwayjuction}
+    Railway-juction :
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-       Budget(Cr.):      {data.Budget}
+       Budget(Cr.):
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-       EndDate:    {data.EndDate}
+       EndDate:
     </Typography>
+    </div>
+    <div>
+             <Typography color="textSecondary" gutterBottom >
+      {data.SiteAddress}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+    {data.Railwayjuction}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+     {data.Budget}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+       {data.EndDate}
+    </Typography>
+    </div>
      </CardContent>
       </Card>
       <Card  className="head1">
-               <CardContent>
+               <CardContent className='Card1'>
+                <div>
              <Typography color="textSecondary" gutterBottom >
-
-      suplier1:   {data.suplier1}
+      Suplier: 
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-    contactperson :{data.contactperson}
+    Contactperson:
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-      phone:{data.phone}
+      Phone:
     </Typography>
     <Typography color="textSecondary" gutterBottom>
-      email:{data.email}
+      Email:
     </Typography>
+    </div>
+    <div>
+             <Typography color="textSecondary" gutterBottom >
+      {data.suplier1}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+   {data.contactperson}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+     {data.phone}
+    </Typography>
+    <Typography color="textSecondary" gutterBottom>
+  {data.email}
+    </Typography>
+    </div>
      </CardContent>
       </Card>
       <Card spacing={2}  className='head1'>
-               <CardContent>
+               <CardContent className='Card1'>
+                <div>
              <Typography color="textSecondary" gutterBottom >
-
-      ProjectStatus:{data.ProjectStatus}
+      ProjectStatus:
     </Typography>
-    <Typography color="textSecondary" gutterBottom>
-                           {data.ProjectStatus1}
+    </div>
+    <div>
+             <Typography color="textSecondary" gutterBottom >
+      {data.ProjectStatus}
     </Typography>
-    <Typography color="textSecondary" gutterBottom>
-      				{data.ProjectStatus2}
-    </Typography>
-    <Typography color="textSecondary" gutterBottom>
-       {data.ProjectStatus3}
-    </Typography>
+    </div>
      </CardContent>
       </Card>
       </Grid> 
 </Grid>}
 <Link to='/' className='link'><Button variant='contained' className='button2' ><ArrowLeftIcon/> Back</Button></Link>
 <h2 className='details'>Project Details</h2>
-	</div>
+	</>
 	);
 
 }

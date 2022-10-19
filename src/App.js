@@ -30,15 +30,14 @@ function App() {
 
   return (
     <Fragment>
-     <Navbar/>
-      <div >
+     <Navbar>
      <Routes>
   <Route path="/" element={<Home/>}/>
   <Route path="/pdf" element={<Pdf/>}/>
   <Route path="/statistics" element={<ProjectStats/>}/>
   <Route path="/project/:id" element={<ProjectID/>}/>
   </Routes>
-  </div>
+  </Navbar>
   </Fragment>
     );
   }

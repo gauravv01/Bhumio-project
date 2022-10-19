@@ -53,8 +53,8 @@ const CreateProject = () => {
   
 
   return (
-    <div>
-      <Button variant="outlined" className="button" onClick={handleClickOpen}>
+    <div className="button">
+      <Button variant="outlined"  onClick={handleClickOpen}>
         create new project
       </Button>
        <Dialog scroll="body" fullWidth open={open} onClose={handleClose}>

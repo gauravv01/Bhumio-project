@@ -43,9 +43,9 @@ export default function CustomizedTables() {
 
 
   return (
-    <Fragment>
-    <div className='margin' >
-    <TableContainer component={Paper}  ref={componentRef}>
+    <>
+    <div className='table'>
+    <TableContainer component={Paper}  ref={componentRef} >
       <Table sx={{ minWidth: 500 }} aria-label="customized table">
         <TableHead>
           <TableRow>
@@ -68,7 +68,7 @@ export default function CustomizedTables() {
       </Table>
     </TableContainer>
     </div>
-    <Button onClick={handlePrint} variant='contained' className='button1'>GeneratePDF</Button>
-    </Fragment>
+    <Button onClick={handlePrint} className='button1' variant='contained' >GeneratePDF</Button>
+</> 
   );
 }

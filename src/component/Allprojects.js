@@ -9,36 +9,58 @@ import './AllProjects.css';
 const Allprojects=()=>{
    const data=useSelector(state=>state.dataFetchSlice.dataArray);
 
+   const getProjects = () =>{
    return(
 	<Fragment >
 	   {
       data.map((item,i)=>{
          return(
-            <div key={item.id} className='main' > 
+            <div key={item.id}  > 
        <Link to={`/project/${item.id}`} className='link'>   
        <Card  className="head">
-               <CardContent>
+               <CardContent className='Card'>
+                  <div>
              <Typography  color="textSecondary" gutterBottom keys={i}>
-
-      Project-Id:{item.id}
+      ProjectId: 
     </Typography>
     <Typography  color="textSecondary" gutterBottom>
-     Project-Name :{item.ProjectName}
+     ProjectsName:
     </Typography>
     <Typography  color="textSecondary" gutterBottom>
-       Budget(Cr.):{item.Budget}
+       Budget(Cr.):
     </Typography>
     <Typography  color="textSecondary" gutterBottom>
-       EndDate:{item.EndDate}
+       EndDate:
     </Typography>
+    </div>
+    <div>
+    <Typography  color="textSecondary" gutterBottom>
+    {item.id}
+    </Typography>
+    <Typography  color="textSecondary" gutterBottom>
+    {item.ProjectName}
+    </Typography>
+    <Typography  color="textSecondary" gutterBottom>
+    {item.Budget}
+    </Typography>
+    <Typography  color="textSecondary" gutterBottom>
+    {item.EndDate}
+    </Typography>
+      </div>
      </CardContent>
       </Card> </Link>
-
             </div>
             );
       })
     }
 	</Fragment>
 	);
+    }
+    return (
+      <div style={{display:'flex',flexWrap:'wrap'}}>
+         {getProjects()}
+      </div>
+    )
+
 }
 export default Allprojects;

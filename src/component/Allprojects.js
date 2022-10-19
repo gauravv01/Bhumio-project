@@ -15,7 +15,7 @@ const Allprojects=()=>{
       data.map((item,i)=>{
          return(
             <div key={item.id} className='main' > 
-       <Link to={`/project/${item.id}`}  className="Link" >   
+       <Link to={`/project/${item.id}`} className='link'>   
        <Card  className="head">
                <CardContent>
              <Typography  color="textSecondary" gutterBottom keys={i}>

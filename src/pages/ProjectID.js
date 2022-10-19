@@ -88,7 +88,7 @@ const Reg=()=>{
       </Card>
       </Grid> 
 </Grid>}
-<Link to='/'><Button variant='contained' className='button2' ><ArrowLeftIcon/> Back</Button></Link>
+<Link to='/' className='link'><Button variant='contained' className='button2' ><ArrowLeftIcon/> Back</Button></Link>
 <h2 className='details'>Project Details</h2>
 	</div>
 	);

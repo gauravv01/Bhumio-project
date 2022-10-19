@@ -5,12 +5,17 @@
     display: grid;
     grid-template-columns: 20vh,20vh;
 }
+
 .head1{
     margin: 2vh;
     width: 20vw;
     border: 1px solid black;
     border-radius: 2.5vh;
     height: 25vh;
+  }
+  .link{
+    text-decoration: none;
+
   }
 
   .button2{

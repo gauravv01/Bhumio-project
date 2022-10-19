@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Grid from '@mui/material/Grid';
-import {useParams} from 'react-router-dom';
+import {useParams,useNavigate} from 'react-router-dom';
 import { Button } from '@mui/material';
 import { useSelector } from 'react-redux';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
@@ -12,11 +11,17 @@ import './ProjectID.css';
 const Reg=()=>{
   const items =useSelector(state=>state.dataFetchSlice.dataArray);
 	const {id}=useParams();
+  const Navigate=useNavigate();
  const data=items.find(item=>item.id===+id);
+ const goback=()=>{
+  Navigate('/')
+ }
       
 	return(
 		 <>
-		{data && <Grid container spacing={3} >
+<Button variant='contained' className='button2' onClick={goback} ><ArrowLeftIcon/> Back</Button>
+<div className='margin'>
+  	{data && <Grid container spacing={3} >
  <Grid container item spacing={2}>
 			<Card  className="head1">
                <CardContent className='Card1'>
@@ -132,7 +137,7 @@ const Reg=()=>{
       </Card>
       </Grid> 
 </Grid>}
-<Link to='/' className='link'><Button variant='contained' className='button2' ><ArrowLeftIcon/> Back</Button></Link>
+</div>
 <h2 className='details'>Project Details</h2>
 	</>
 	);

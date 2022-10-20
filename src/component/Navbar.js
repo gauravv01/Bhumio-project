@@ -7,8 +7,8 @@ const Navbar=(props)=>{
 	return(
 		<div className='maindiv'>
 		<ul>
-		<li><Link to="/"><HomeIcon  /></Link></li><br/><br/>
-		<li><Link to="/pdf"><PictureAsPdfIcon /></Link></li><br/><br/>
+		<li><Link to="/"><HomeIcon  /></Link></li>
+		<li><Link to="/pdf"><PictureAsPdfIcon /></Link></li>
 		<li><Link to="/statistics"><LeaderboardIcon /></Link></li>
 		</ul>
 		<div className='internal_div'>{props.children}</div>

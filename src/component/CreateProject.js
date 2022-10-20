@@ -13,6 +13,7 @@ import './CreateProject.css';
 const CreateProject = () => {
 
   const [open, setOpen] = useState(false);
+  const [FormisEmpty,setFormisEmpty]=useState(false);
   const dispatch = useDispatch();
   const [project, setProject] = useState({
     ProjectName: "",
@@ -38,6 +39,13 @@ const CreateProject = () => {
   };
   async function onFormSubmit(e) {
     e.preventDefault();
+    for(const key in project){
+      if(!project[key]){
+      setFormisEmpty(true)
+      return
+      }
+    }
+    setFormisEmpty(false);
     dispatch(dataActions.NewRequest(project));
     setOpen(false);
   } 
@@ -47,6 +55,7 @@ const CreateProject = () => {
   };
 
   const handleClose = () => {
+    setFormisEmpty(false);
     setOpen(false);
   };
 
@@ -211,6 +220,7 @@ const CreateProject = () => {
             variant="standard"
           />
         </DialogContent>
+        {FormisEmpty && <p className="message">Please Fill all the details.</p>}
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={onFormSubmit}>Save</Button>

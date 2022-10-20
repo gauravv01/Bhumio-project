@@ -44,6 +44,9 @@ const sendRequest = async () => {
         message: 'Sent data successfully!',
       })
     );
+    setTimeout(()=>{
+      dispatch( NotificationActions.handleNotification(null))
+    },[1000])
   } catch (error) {
     dispatch(
         NotificationActions.handleNotification({
